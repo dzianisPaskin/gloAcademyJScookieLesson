@@ -38,6 +38,7 @@ const render = function () {
       localStorage.clear()
       render();
     });
+    localStorage.setItem('toDo', JSON.stringify(toDoData));
   });
 };
 
@@ -49,10 +50,7 @@ todoControl.addEventListener("submit", function (event) {
   };
 
   if (newToDo.text != "") {
-    toDoData.push(newToDo);
-
-   localStorage.setItem('toDo', JSON.stringify(toDoData));
-
+    toDoData.push(newToDo)
     headerInput.value = "";
     render();
   }
