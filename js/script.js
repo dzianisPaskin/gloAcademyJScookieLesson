@@ -49,11 +49,13 @@ todoControl.addEventListener("submit", function (event) {
   };
 
   if (newToDo.text != "") {
-  //   toDoData.push(newToDo);
+    toDoData.push(newToDo);
 
-   localStorage.setItem('toDo', JSON.stringify([newToDo]));
+   localStorage.setItem('toDo', JSON.stringify(toDoData));
 
     headerInput.value = "";
     render();
   }
 });
+
+render();
